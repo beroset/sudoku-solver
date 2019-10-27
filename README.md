@@ -1,3 +1,4 @@
+# sudoku-solver
 I decided to implement a Sudoku solver using C++11, but without guessing.  That is, this Sudoku solver does *not* make guesses or backtracks, but instead only solves based on valid logical inference.  With that in mind, here is the first part of the file, including header includes and class declaration.
 
 To speed things along, this version uses a number of static tables.  Sudoku uses three kinds of sets of nine squares.  They are rows, columns and subsquares.  Each square on the 9x9 grid belongs to exactly one of each of those.  The static tables work by allowing a generic routine to be able to step through all of the values in the associated subsquare.  For example, if we wanted to check the lower right square (number 80), we could check each item in its row by using the `rows[]` array.  Each entry contains the index of the next square to be visited, (in this case 72, which is the far left square on the last row).  
